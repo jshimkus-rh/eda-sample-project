@@ -1,0 +1,12 @@
+---
+- name: "10,000 event rules"
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 10000
+  rules:
+    - name: Ten thousand events rule
+      condition: (event.i % 100) == 0
+      action:
+        debug:
+          msg: "Event {{ event.i }} triggered"
