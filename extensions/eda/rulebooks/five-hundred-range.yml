@@ -1,0 +1,12 @@
+---
+- name: "500 event rules"
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 500
+  rules:
+    - name: Five hundred events rule
+      condition: event.i >= 400
+      action:
+        debug:
+          msg: "Event {{ event.i }} triggered"
