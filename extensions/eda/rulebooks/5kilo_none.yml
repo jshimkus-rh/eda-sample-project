@@ -1,5 +1,5 @@
 ---
-- name: "5k event rules"
+- name: "5k none event rules"
   hosts: all
   sources:
     - name: generic
