@@ -1,0 +1,16 @@
+---
+- name: Check if the given url is available
+  hosts: localhost
+  sources:
+    - ansible.eda.url_check:
+        urls:
+          - https://docs.ansible.com/
+        delay: 1
+        verify_ssl: false
+  rules:
+    - name: check if the site is up
+      condition: event.url_check.status == "up"
+      action:
+        debug:
+          msg:
+            - "Message {{ event }}"
