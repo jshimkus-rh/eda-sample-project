@@ -19,4 +19,6 @@
       condition: event.i == 1
       action:
         debug:
-          msg: "{{activities}}"
+          msg: "dos-si-do"
+        debug:
+          msg: "{{ activities }}"
