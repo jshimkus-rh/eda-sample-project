@@ -15,10 +15,14 @@
         set_fact:
           activities: "bla bla bla"
 
-    - name: Print Activities
+    - name: Dos-si-do
       condition: event.i == 1
       action:
         debug:
           msg: "dos-si-do"
+
+    - name: Print Activities
+      condition: event.i == 1
+      action:
         debug:
           msg: "{{ activities }}"
