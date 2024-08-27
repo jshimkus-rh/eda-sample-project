@@ -1,0 +1,16 @@
+---
+- name: "Thirty seconds of events"
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 30
+        delay: 1  # 30 seconds
+  rules:
+    - name: Thirty seconds of events rule
+      condition: >-
+        event.i in [
+          0, 10, 20, 29
+        ]
+      action:
+        debug:
+          msg: "Event {{ event.i }} triggered"
